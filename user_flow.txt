@@ -1,0 +1,26 @@
+User Flow:
+
+Action Click:
+	I am One:
+		if not registered:
+			Enter your email Address.
+			Choose your sexual orientation and gender.
+			Agree with terms, with notice you will be receiving email from other random dogs. (date recorded.)
+			Complete. Input textarea provided, leave a message.
+			Done: homepage changed to postcard which is buyable: I am a motherf**king single body dog.
+		else:
+			return you already been singled for XX days
+			with a postcard
+			SHAME ON YOU
+
+	I am Not:
+		Congrats, you are not -> page changes accordingly to a postcard:
+			Asks:
+				If you have been a single body dog b4 (left your email on our site previously?):
+					Yes: 
+						Enter email, check w/ database: Output "days_singled" within the Postcard.
+						ask if want postcard to be sent?
+						Cross name off database. With warning: no more receive any email.
+					No:
+						Fuck you.
+						Pay for the f**king postcard.
