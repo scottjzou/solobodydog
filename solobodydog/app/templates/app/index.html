@@ -1,3 +1,5 @@
+{% load staticfiles %}
+
 <!DOCTYPE HTML>
 <!--
 	Twenty by HTML5 UP
@@ -6,23 +8,24 @@
 -->
 <html>
 	<head>
-		<title>Twenty by HTML5 UP</title>
+		<title>SoloBodyDog</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><script src="{%  static 'app/assets/js/ie/html5shiv.js' %}"></script><![endif]-->
+		<link rel="stylesheet" href="{%  static 'app/assets/css/main.css' %}" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="{% static 'app/assets/css/ie8.css' %}" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="{% static 'app/assets/css/ie9.css' %}" /><![endif]-->
 	</head>
 	<body class="index">
 		<div id="page-wrapper">
 
 			<!-- Header -->
 				<header id="header" class="alt">
-					<h1 id="logo"><a href="index.html">Twenty <span>by HTML5 UP</span></a></h1>
+					<h1 id="logo"><a href="index.html">SolodyBodyDog <span>by Those Guys</span></a></h1>
 					<nav id="nav">
 						<ul>
-							<li class="current"><a href="index.html">Welcome</a></li>
+{#							<li class="current"><a href="index.html">Welcome</a></li>#}
+                        <li class="current"><a href="profile.html">{{ user.email }}</a></li>
 							<li class="submenu">
 								<a href="#">Layouts</a>
 								<ul>
@@ -42,7 +45,11 @@
 									</li>
 								</ul>
 							</li>
-							<li><a href="#" class="button special">Sign Up</a></li>
+                            {% if user.is_authenticated %}
+							<li><a href="/app/logout" class="button special">Log Out</a></li>
+                            {% else %}
+							<li><a href="/app/login" class="button special">Log In</a></li>
+                            {% endif %}
 						</ul>
 					</nav>
 				</header>
@@ -59,16 +66,16 @@
 					<div class="inner">
 
 						<header>
-							<h2>TWENTY</h2>
+							<h2>SoloBodyDog</h2>
 						</header>
-						<p>This is <strong>Twenty</strong>, a free
+						<p>This is <strong>SoloBodyDog</strong>, a free
 						<br />
-						responsive template
+						matching website.
 						<br />
-						by <a href="http://html5up.net">HTML5 UP</a>.</p>
+						by <a href="http://html5up.net">Those Guys</a>.</p>
 						<footer>
 							<ul class="buttons vertical">
-								<li><a href="#main" class="button fit scrolly">Tell Me More</a></li>
+								<li><a href="/app/signup" class="button fit scrolly">Sign Up Now</a></li>
 							</ul>
 						</footer>
 
@@ -173,7 +180,7 @@
 								<div class="6u 12u(narrower)">
 
 									<section>
-										<a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
+										<a href="#" class="image featured"><img src="{%  static 'app/images/pic01.jpg'%}" alt="" /></a>
 										<header>
 											<h3>A Really Fast Train</h3>
 										</header>
@@ -184,7 +191,7 @@
 								<div class="6u 12u(narrower)">
 
 									<section>
-										<a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
+										<a href="#" class="image featured"><img src="{%  static 'app/images/pic02.jpg'%}" alt="" /></a>
 										<header>
 											<h3>An Airport Terminal</h3>
 										</header>
@@ -197,7 +204,7 @@
 								<div class="6u 12u(narrower)">
 
 									<section>
-										<a href="#" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
+										<a href="#" class="image featured"><img src="{%  static 'app/images/pic03.jpg'%}" alt="" /></a>
 										<header>
 											<h3>Hyperspace Travel</h3>
 										</header>
@@ -208,7 +215,7 @@
 								<div class="6u 12u(narrower)">
 
 									<section>
-										<a href="#" class="image featured"><img src="images/pic04.jpg" alt="" /></a>
+										<a href="#" class="image featured"><img src="{%  static 'app/images/pic04.jpg'%}" alt="" /></a>
 										<header>
 											<h3>And Another Train</h3>
 										</header>
